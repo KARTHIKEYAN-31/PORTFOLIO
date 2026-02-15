@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karthikeyan P | AI/ML Portfolio</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Orbitron:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+
+
+    <!-- Plotly -->
+    <script src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Scroll Progress -->
+    <div id="scroll-progress"></div>
+
+    <!-- Cursor Glow -->
+    <div id="cursor-glow"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">PORTFOLIO<span class="dot">.</span></div>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+        <!-- Hacker Mode Toggle -->
+        <button id="theme-hack"
+            style="background:none; border:none; color:var(--accent-cyan); cursor:pointer; font-size:1.2rem; margin-left:1rem;">
+            <i class="fas fa-terminal"></i>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <canvas id="neural-canvas"></canvas>
+
+        <div class="hero-content">
+            <h2 class="animate-text">Hello, I'm</h2>
+            <h1 class="glitch-text" data-text="Karthikeyan P">Karthikeyan P</h1>
+            <h3 class="subtitle">Senior AI/ML Computational Science Analyst</h3>
+            <p class="hero-desc">
+                Specializing in <span class="highlight">GenAI</span>, <span class="highlight">Agentic RAG</span>,
+                and <span class="highlight">Multi-Agent Systems</span>. Building the future of intelligent applications.
+            </p>
+
+            <div class="cta-group">
+                <a href="#projects" class="btn btn-primary">View Work</a>
+                <a href="#contact" class="btn btn-outline">Contact Me</a>
+            </div>
+
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:pnkgkarthikeyanlol@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="hero-image-container">
+                <!-- Profile Image (Original) -->
+                <img src="utils/profile.jpg" alt="Karthikeyan P" class="profile-img-hero" width="220" height="220">
+            </div>
+        </div>
+
+        <div class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section hidden">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-container">
+            <div class="about-text">
+                <p>
+                    I am a passionate AI Researcher and Engineer with over 4 years of experience delivering cutting-edge
+                    solutions at Accenture.
+                    My focus lies in Generative AI, Large Language Models (LLMs), and scalable cloud architecture.
+                </p>
+                <p>
+                    I thrive on solving complex problems using Multi-Agent Systems and building secure, efficient
+                    enterprise-grade RAG platforms.
+                </p>
+            </div>
+            <div class="about-stats">
+                <div class="stat-card">
+                    <h3>4+</h3>
+                    <p>Years Experience</p>
+                </div>
+                <div class="stat-card">
+                    <h3>4</h3>
+                    <p>Projects Delivered</p>
+                </div>
+                <div class="stat-card">
+                    <h3>5</h3>
+                    <p>Certifications</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section hidden">
+        <h2 class="section-title">Technical Arsenal</h2>
+
+        <div class="skills-grid">
+            <!-- 3D Globe Skill Visual -->
+            <div class="skill-category wide" style="text-align: center; height: 450px; position: relative;">
+                <h3><i class="fas fa-globe"></i> Skills Universe</h3>
+                <canvas id="skills-3d"></canvas>
+            </div>
+
+            <div class="skill-category">
+                <h3><i class="fas fa-robot"></i> Generative AI</h3>
+                <div class="skill-tags">
+                    <span>LangChain</span>
+                    <span>LlamaIndex</span>
+                    <span>OpenAI API</span>
+                    <span>Google Gemini</span>
+                    <span>Hugging Face</span>
+                    <span>Prompt Engineering</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><i class="fas fa-code"></i> Development</h3>
+                <div class="skill-tags">
+                    <span>Python</span>
+                    <span>FastAPI</span>
+                    <span>React</span>
+                    <span>Node.js</span>
+                    <span>Docker</span>
+                    <span>Kubernetes</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><i class="fas fa-database"></i> Data & Cloud</h3>
+                <div class="skill-tags">
+                    <span>PostgreSQL (pgvector)</span>
+                    <span>Redis</span>
+                    <span>ChromaDB</span>
+                    <span>AWS Bedrock</span>
+                    <span>GCP Vertex AI</span>
+                </div>
+            </div>
+
+            <!-- Radar Chart Container -->
+            <div class="skill-category wide">
+                <h3><i class="fas fa-chart-radar"></i> Proficiency Analysis</h3>
+                <div id="skillsChart" style="width:100%; height:400px;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section hidden">
+        <h2 class="section-title">Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2022 - Present</div>
+                <div class="timeline-content">
+                    <h3>Senior AI/ML Analyst</h3>
+                    <h4>Accenture</h4>
+                    <ul>
+                        <li>Spearheaded the development of "Enterprise Agentic RAG", a multi-agent system orchestrating
+                            SQL and Chart generation for complex market analysis on AWS Bedrock.</li>
+                        <li>Designed and implemented a scalable vector search architecture using <code>pgvector</code>
+                            and semantic caching (Valkey/Redis), reducing query latency by 40%.</li>
+                        <li>Engineered a robust Role-Based Access Control (RBAC) layer within the SQL generation
+                            pipeline to ensure data security across hierarchical user roles.</li>
+                        <li>Optimized Large Language Model (LLM) inference costs by 30% through strategic quantization
+                            and prompt engineering.</li>
+                        <li>Mentored junior developers on Agentic AI patterns and best practices for production-grade
+                            Python applications.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2020 - 2022</div>
+                <div class="timeline-content">
+                    <h3>AI Developer</h3>
+                    <h4>Accenture</h4>
+                    <ul>
+                        <li>Developed high-performance NLP models for automated document processing, dramatically
+                            streamlining data extraction workflows.</li>
+                        <li>Built proprietary internal coding co-pilot tools using GPT-3, enhancing team productivity
+                            and code quality.</li>
+                        <li>Collaborated with cross-functional teams to integrate AI microservices into existing
+                            enterprise monolithic architectures.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section hidden">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            <!-- Project 1: Enterprise Agentic RAG -->
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Enterprise Agentic RAG</h3>
+                    <div class="tech-stack">
+                        <span>LangGraph</span><span>AWS Bedrock</span><span>pgvector</span>
+                    </div>
+                    <p>An enterprise-grade analytics platform querying Market Share & Nozzle Sales data via natural
+                        language. Features dual-agent architecture (SQL + Chart), semantic caching, and RBAC security.
+                    </p>
+                    <div class="project-links">
+                        <a href="#" class="btn-sm">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: SQL Chart Agent -->
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>SQL Chart Agent Package</h3>
+                    <div class="tech-stack">
+                        <span>Python</span><span>LangChain</span><span>Plotly</span>
+                    </div>
+                    <p>Production-ready Python package for converting natural language into SQL queries and Plotly
+                        charts. Includes auto-correction, dynamic metadata injection, and secure execution.</p>
+                    <div class="project-links">
+                        <a href="#" class="btn-sm">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: LangGraph Market Analyst -->
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>LangGraph Market Analyst</h3>
+                    <div class="tech-stack">
+                        <span>LangGraph</span><span>Python</span><span>Supervisor</span>
+                    </div>
+                    <p>A specialized agent workflow utilizing a supervisor node to route complex queries between SQL
+                        generation and chart visualization agents for optimal market insights.</p>
+                    <div class="project-links">
+                        <a href="#" class="btn-sm">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section hidden">
+        <h2 class="section-title">Education</h2>
+        <div class="edu-grid">
+            <div class="column-title" style="grid-column: 1/-1; text-align:center;">Academic Performance</div>
+            <div id="eduChart" style="grid-column: 1/-1; width:100%; height:300px;"></div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <footer id="contact" class="section" style="text-align: center; padding-top: 2rem;">
+        <h2 class="section-title">Get In Touch</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+            Open to opportunities and collaborations. Let's build something amazing.
+        </p>
+        <div class="social-links" style="justify-content: center; margin-bottom: 3rem;">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:pnkgkarthikeyanlol@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p style="color: var(--text-secondary); font-size: 0.9rem;">
+            &copy; 2026 Karthikeyan P. Built with <i class="fas fa-heart" style="color: var(--accent-purple);"></i> and
+            AI.
+        </p>
+    </footer>
+
+    <!-- Chatbot Window -->
+    <div id="chatbot-widget">
+        <div id="chat-toggle" class="chat-toggle">
+            <i class="fas fa-robot"></i>
+        </div>
+    </div>
+
+    <div id="chat-window" class="hidden">
+        <div class="chat-header">
+            <div class="chat-title">
+                <div class="chat-avatar-container">
+                    <img src="utils/profile.jpg" alt="AI Avatar" class="chat-avatar">
+                    <span class="status-indicator"></span>
+                </div>
+                <div class="chat-info">
+                    <h4>AI Digital Twin</h4>
+                    <p>Online | v2.0</p>
+                </div>
+            </div>
+            <div class="chat-controls">
+                <button id="mic-btn"><i class="fas fa-microphone"></i></button>
+                <button id="close-chat"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+        <div id="chat-messages" class="chat-messages">
+            <div class="message bot-message">
+                Hello! I am Karthikeyan's AI Digital Twin. Ask me anything about his skills, projects, or experience!
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="user-input" placeholder="Type a command or ask a question...">
+            <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="env.js"></script>
+    <script src="particles.js"></script>
+    <script src="skills-3d.js"></script>
+    <script src="ai-ui.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
