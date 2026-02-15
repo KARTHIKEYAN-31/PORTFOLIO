@@ -1,1 +1,3 @@
-
+const CONFIG = {
+    GEMINI_API_KEY: "__GEMINI_API_KEY_PLACEHOLDER__"
+};
