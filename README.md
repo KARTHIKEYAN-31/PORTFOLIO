@@ -1,14 +1,14 @@
 # AI/ML Portfolio - Karthikeyan P
 
-Welcome to the digital portfolio of **Karthikeyan P**, a Senior AI/ML Computational Science Analyst. This website showcases expertise in **GenAI**, **Agentic RAG**, **Multi-Agent Systems**, and **Cloud Architecture** through a futuristic, dark-themed glassmorphism interface.
+Welcome to the digital portfolio of **Karthikeyan P**, a Generative AI Developer and Senior Analyst in AI/ML Computational Science. This website showcases expertise in **GenAI**, **Agentic RAG**, **Multi-Agent Systems**, **LLMOps**, and **Cloud Architecture (GCP, Azure, AWS)** through a futuristic, dark-themed glassmorphism interface.
 
 ## 🚀 Features
 
 -   **Cyberpunk/Sci-Fi Aesthetic**: Neon accents, glass cards, and dynamic hover effects.
 -   **Terminal Mode (Hacker Theme)**: Toggle the "Terminal" icon to switch the entire site, including charts, to a Matrix-green, monospace developer aesthetic.
 -   **Interactive Visual Analytics**:
-    -   **Skills Radar Chart**: Plotly-powered visualization comparing personal proficiency vs. industry average. Syncs with Hacker Mode.
-    -   **Academic Gauge Tiles**: Angular gauges displaying academic performance (B.Tech, 12th, 10th). Syncs with Hacker Mode.
+    -   **Skills Radar Chart**: Plotly-powered visualization comparing personal proficiency vs. industry benchmark across Agentic RAG, Python, GenAI, Cloud, Vector DBs, and LLMOps.
+    -   **Academic & Quality Gauge Tiles**: Angular gauges displaying M.S. AI & ML (8.7 CGPA), B.E. CSE (8.5 CGPA), and test suite reliability. Syncs with Hacker Mode.
 -   **AI Digital Twin Chatbot**:
     -   A floating chatbot powered by **Google Gemini**.
     -   **Glassmorphism UI**: Redesigned with a sleek, frosted glass look.

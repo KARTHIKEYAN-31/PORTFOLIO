@@ -38,19 +38,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
 
-    if (hamburger) {
+    if (hamburger && navLinks) {
         hamburger.addEventListener('click', () => {
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-            if (navLinks.style.display === 'flex') {
+            const isFlex = navLinks.style.display === 'flex';
+            navLinks.style.display = isFlex ? 'none' : 'flex';
+            if (!isFlex) {
                 navLinks.style.flexDirection = 'column';
                 navLinks.style.position = 'absolute';
-                navLinks.style.top = '80px';
+                navLinks.style.top = '72px';
                 navLinks.style.left = '0';
                 navLinks.style.width = '100%';
-                navLinks.style.background = 'rgba(10, 10, 15, 0.95)';
+                navLinks.style.background = 'rgba(8, 11, 17, 0.96)';
+                navLinks.style.backdropFilter = 'blur(16px)';
                 navLinks.style.padding = '2rem';
+                navLinks.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
+                navLinks.style.gap = '1.5rem';
                 navLinks.style.textAlign = 'center';
             }
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.style.display = 'none';
+                }
+            });
         });
     }
 
@@ -110,10 +122,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const skillsData = [
         {
             type: 'scatterpolar',
-            r: [98, 95, 90, 85, 92, 80, 98],
-            theta: ['GenAI & Agents', 'Python & Backend', 'RAG Systems', 'Cloud (AWS/Azure)', 'Vector DBs', 'System Design', 'GenAI & Agents'],
+            r: [98, 96, 95, 90, 94, 92, 98],
+            theta: ['Agentic RAG & Multi-Agent', 'Python & Backend', 'GenAI & LLMs', 'Cloud (GCP/AWS/Azure)', 'Vector DBs & Knowledge Graphs', 'LLMOps & CI/CD', 'Agentic RAG & Multi-Agent'],
             fill: 'toself',
-            name: 'Me',
+            name: 'Karthikeyan',
             marker: { color: '#00f3ff' },
             line: { color: '#00f3ff' },
             fillcolor: 'rgba(0, 243, 255, 0.2)'
@@ -121,9 +133,9 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             type: 'scatterpolar',
             r: [60, 70, 50, 65, 55, 60, 60],
-            theta: ['GenAI & Agents', 'Python & Backend', 'RAG Systems', 'Cloud (AWS/Azure)', 'Vector DBs', 'System Design', 'GenAI & Agents'],
+            theta: ['Agentic RAG & Multi-Agent', 'Python & Backend', 'GenAI & LLMs', 'Cloud (GCP/AWS/Azure)', 'Vector DBs & Knowledge Graphs', 'LLMOps & CI/CD', 'Agentic RAG & Multi-Agent'],
             fill: 'toself',
-            name: 'Avg. Dev',
+            name: 'Industry Benchmark',
             marker: { color: '#ffffff' },
             line: { color: '#ffffff', dash: 'dot' },
             fillcolor: 'rgba(255, 255, 255, 0.05)',
@@ -143,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             angularaxis: {
                 tickfont: {
-                    size: 12,
+                    size: 11,
                     color: '#ffffff',
                     family: 'Space Grotesk'
                 },
@@ -163,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
             orientation: 'h',
             y: -0.1
         },
-        margin: { t: 40, b: 40, l: 40, r: 40 }
+        margin: { t: 40, b: 40, l: 50, r: 50 }
     };
 
     // Check if element exists before plotting
@@ -171,14 +183,14 @@ document.addEventListener('DOMContentLoaded', () => {
         Plotly.newPlot('skillsChart', skillsData, skillsLayout, { displayModeBar: false, responsive: true });
     }
 
-    // Education Indicator Charts (Numeric Tiles)
+    // Education & Metrics Indicator Charts
     const eduData = [
         {
             type: "indicator",
             mode: "number+gauge",
-            value: 8.5,
-            title: { text: "B.Tech (CGPA)", font: { size: 18, color: "#00f3ff", family: "Space Grotesk" } },
-            number: { suffix: "/10", font: { size: 40, color: "white" } },
+            value: 8.7,
+            title: { text: "M.S. AI & ML (CGPA)", font: { size: 16, color: "#00f3ff", family: "Space Grotesk" } },
+            number: { suffix: "/10", font: { size: 36, color: "white" } },
             gauge: {
                 shape: "angular",
                 bar: { color: "#bc13fe" },
@@ -191,24 +203,24 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             type: "indicator",
             mode: "number+gauge",
-            value: 74,
-            title: { text: "12th Grade", font: { size: 18, color: "#00f3ff", family: "Space Grotesk" } },
-            number: { suffix: "%", font: { size: 40, color: "white" } },
+            value: 8.5,
+            title: { text: "B.E. CSE (CGPA)", font: { size: 16, color: "#00f3ff", family: "Space Grotesk" } },
+            number: { suffix: "/10", font: { size: 36, color: "white" } },
             gauge: {
                 shape: "angular",
                 bar: { color: "#00f3ff" },
                 bgcolor: "rgba(255,255,255,0.05)",
                 bordercolor: "rgba(255,255,255,0.1)",
-                axis: { range: [0, 100], visible: false }
+                axis: { range: [0, 10], visible: false }
             },
             domain: { x: [0.35, 0.65], y: [0, 1] }
         },
         {
             type: "indicator",
             mode: "number+gauge",
-            value: 98,
-            title: { text: "10th Grade", font: { size: 18, color: "#00f3ff", family: "Space Grotesk" } },
-            number: { suffix: "%", font: { size: 40, color: "white" } },
+            value: 100,
+            title: { text: "Test Suite Target", font: { size: 16, color: "#00f3ff", family: "Space Grotesk" } },
+            number: { suffix: "%", font: { size: 36, color: "white" } },
             gauge: {
                 shape: "angular",
                 bar: { color: "#bc13fe" },
@@ -240,6 +252,45 @@ document.addEventListener('DOMContentLoaded', () => {
     const sendBtn = document.getElementById('send-btn');
     const chatMessages = document.getElementById('chat-messages');
 
+    // Dynamic Experience Calculator (Career Start: 02 May 2022)
+    function calculateExperience() {
+        const startDate = new Date(2022, 4, 2); // May 2, 2022 (Month 4 is May)
+        const today = new Date();
+
+        let years = today.getFullYear() - startDate.getFullYear();
+        let months = today.getMonth() - startDate.getMonth();
+        let days = today.getDate() - startDate.getDate();
+
+        if (days < 0) {
+            months--;
+        }
+        if (months < 0) {
+            years--;
+            months += 12;
+        }
+
+        const totalMonths = years * 12 + months;
+        const decimalYears = (totalMonths / 12).toFixed(1);
+        const statText = `${years}+`;
+        const sentenceText = months > 0 ? `over ${years} years` : `${years} years`;
+        const detailedText = `${years} years${months > 0 ? ` and ${months} month${months > 1 ? 's' : ''}` : ''}`;
+
+        // Update Stat Counter Card
+        const statEl = document.getElementById('stat-experience');
+        if (statEl) {
+            statEl.textContent = statText;
+        }
+
+        // Update In-Text Experience Mentions
+        document.querySelectorAll('.dynamic-exp-text').forEach(el => {
+            el.textContent = sentenceText;
+        });
+
+        return { years, months, totalMonths, decimalYears, statText, sentenceText, detailedText };
+    }
+
+    const expInfo = calculateExperience();
+
     // Load API Key from env.js (CONFIG) or LocalStorage
     let GEMINI_API_KEY = "";
 
@@ -249,21 +300,38 @@ document.addEventListener('DOMContentLoaded', () => {
         GEMINI_API_KEY = localStorage.getItem('GEMINI_API_KEY') || "";
     }
 
-    // System Prompt - The Persona
+    // System Prompt - The Persona (Uses Dynamic Experience)
     const SYSTEM_PROMPT = `
-    You are the AI Digital Twin of Karthikeyan P, a Senior AI/ML Computational Science Analyst at Accenture. 
-    Act as him: professional, knowledgeable, yet approachable.
+    You are the AI Digital Twin of Karthikeyan P, a Generative AI Developer and Senior Analyst in AI/ML Computational Science at Accenture with ${expInfo.detailedText} (${expInfo.sentenceText}) of experience starting from May 2022.
+    Act as him: highly technical, professional, innovative, and articulate.
     
     Key Profile Details:
-    - **Current Role**: Sr. Analyst at Accenture (GenAI, LLM).
-    - **Experience**: 4+ years in AI/ML, Agentic RAG, Multi-Agent Systems.
-    - **Tech Stack**: LangGraph, AWS Bedrock, Vertex AI, Google ADK, Agent Space, GCP, Python, PostgreSQL (pgvector), Redis, Plotly.
-    - **Projects**: Enterprise Agentic RAG Platform, AI Research Analyst, Coding Co-Pilot.
-    - **Education**: B.Tech in CS (8.5/10) from Anna University. 12th Grade: 74%.
-    - **Style**: Answer concisely. Use technical terms correctly. Be enthusiastic about AI agents.
+    - **Career Experience**: ${expInfo.detailedText} (Started career on May 2, 2022).
+    - **Current Role**: Senior Analyst - AI/ML Computational Science at Accenture (Nov 2025 – Present).
+      * FPG HR Assistant (Mar 2026 – Present): Production-grade multi-agent conversational HR/IT assistant using Python 3.13, Google ADK, GCP (Agent Engine, Cloud Run), and Gemini Enterprise. Architected Gateway Orchestrator with specialist sub-agents, ServiceNow ITSM connector, 100% test coverage with 630+ automated pytest assertions, SAST (Bandit), Ruff.
+      * IOCL Analytics Agent (Nov 2025 – Mar 2026): Enterprise Agentic RAG platform using LangGraph, AWS Bedrock, Hub-and-Spoke dual agents (SQL & Chart), PostgreSQL/pgvector hybrid storage, Valkey/Redis semantic caching, dynamic Plotly visualizations.
+    - **Previous Experience**: GenAI Developer at Maventic Innovative Solutions (May 2022 – Oct 2025).
+      * Deployed LangGraph and FastAPI chatbots automating 500+ daily SAP HANA queries.
+      * Designed core RAG pipeline with Pinecone and Neo4j Knowledge Graph (improved retrieval relevance by 40%).
+      * Predictive maintenance models with 95% accuracy (-15% unplanned downtime).
+      * End-to-end MLOps on Azure ML & Azure DevOps (-50% release cycles).
+    - **Personal Projects**:
+      * AI Research Analyst Agent (LangGraph + Pinecone for autonomous multi-step web research).
+      * Personalized Coding Co-Pilot (ChromaDB + Tree-sitter RAG assistant for codebase memory).
+      * Dynamic Customer Support Agent (Stateful LangGraph + Redis dual-memory querying live SQL).
+    - **Technical Arsenal**:
+      * Languages: Python 3.13, SQL
+      * AI/ML & Frameworks: LangChain, LangGraph, Google ADK, Agent Engine, CrewAI, PyTorch, TensorFlow, Scikit-learn, NLP (GPT, Gemini, BERT, LLaMA)
+      * Cloud & Tools: AWS Bedrock, Gemini Enterprise, Vertex AI, GCP (Cloud Run, Agent Engine), Azure ML, Azure DevOps, Docker, FastAPI, Streamlit, SAP HANA, SAP SAC, Git/GitHub
+      * Databases: PostgreSQL (pgvector), Pinecone, ChromaDB, Neo4j (Graph), Valkey/Redis
+      * Core Concepts: Agentic RAG, LLMOps, LoRA Fine-Tuning, Multi-Agent Systems, Function Calling, Prompt Engineering, RBAC Security
+    - **Education**:
+      * Master of Science in AI & Machine Learning | Woolf University (Alma Better) | 2024 – Present (CGPA: 8.7)
+      * Bachelor of Engineering in Computer Science & Engineering | KCG College of Technology, Chennai | 2019 – 2023 (CGPA: 8.5)
+    - **Certifications**: Stanford (Machine Learning), IBM (Data Science), Google (Prompt Designing), GCP (Streamlit with Gemini in Vertex AI), DeepLearning.AI (RAG with VectorDB & KnowledgeGraph, Function Calling & Data Extraction, LangGraph, LLMOps).
+    - **Contact & Location**: Work Location: Bengaluru, Karnataka | Hometown: Tiruvannamalai / Chennai, Tamil Nadu | Phone: +91 9080929496 | Email: pnkgkarthikeyanlol@gmail.com | LinkedIn | GitHub | Coursera
     
-    If asked about contact info, provide: pnkgkarthikeyanlol@gmail.com, LinkedIn, or GitHub.
-    If asked a generic question, steer it back to AI or Karthikeyan's expertise.
+    If asked about resume or hiring, provide his email, phone number, and offer to download his resume.
     `;
 
     // Toggle Chat

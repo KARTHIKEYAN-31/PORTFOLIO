@@ -3,10 +3,11 @@ const ctx3d = canvas3d.getContext('2d');
 
 let width3d, height3d;
 const skillsList = [
-    "Python", "GenAI", "RAG", "LangChain", "AWS",
-    "Vertex AI", "Docker", "Kubernetes", "React",
-    "Node.js", "Redis", "PostgreSQL", "TensorFlow",
-    "PyTorch", "NLP", "Agents", "Git", "Linux", "CI/CD"
+    "Python 3.13", "GenAI", "Agentic RAG", "LangGraph", "LangChain",
+    "Google ADK", "Agent Engine", "Gemini Enterprise", "AWS Bedrock",
+    "Vertex AI", "pgvector", "Pinecone", "Neo4j", "Valkey/Redis",
+    "FastAPI", "Docker", "PyTorch", "LLMOps", "LoRA Fine-Tuning",
+    "SAP HANA", "ServiceNow", "Multi-Agent"
 ];
 
 let nodes = [];
